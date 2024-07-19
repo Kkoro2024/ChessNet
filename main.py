@@ -6,12 +6,12 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("filename", type=str, help="filename of the image to process")
-parser.add_argument("--network", type=str, default="resnet18.onnx", help="model to use, can be:  googlenet, resnet-18, ect. (see --help for others)")
+
 opt = parser.parse_args()
 
 img = jetson_utils.loadImage(opt.filename)
 
-net = jetson_inference.imageNet(opt.network)
+net = jetson_inference.imageNet(model="models/chess/resnet18.onnx", labels="models/chess/labels.txt", input_blob="input_0", output_blob="output_0")
 
 class_idx, confidence = net.Classify(img)
 

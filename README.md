@@ -13,4 +13,4 @@ This will be able to look at an image of a chess piece and say what piece it is.
 2. Build the jetson-inference library
 3. `git clone https://github.com/Kkoro2024/ChessNet.git`
 4. `cd ChessNet`
-5. `python3 main.py {filename}` 
+5. `python3 main.py {filename}`
